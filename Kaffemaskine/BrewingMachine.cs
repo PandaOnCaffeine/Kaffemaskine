@@ -13,8 +13,9 @@ namespace Kaffemaskine
         {
             filter = true;
         }
-        public void Brew(int cups, CoffeePowder c)
+        public void Brew(int cups, BrewingPowder b)
         {
+            int count = 0;
             if (on == false)
             {
                 Console.WriteLine($"{GetType()} Not Turned On!");
@@ -25,13 +26,22 @@ namespace Kaffemaskine
                 Console.WriteLine($"{GetType()} Filter Not Found!");
                 return;
             }
-            int count = 0;
             for (int i = 0; i < cups; i++)
             {
                 count++;
+                Done(b, count);
+            }
+        }
+        public void Done(BrewingPowder b, int count)
+        {
+            if (b is CoffeePowder)
+            {
                 Console.WriteLine($"Cup number {count} of Coffee is done!");
             }
-            filter = false;
+            else if (b is Tea)
+            {
+                Console.WriteLine($"Cup number {count} of Tea is done!");
+            }
         }
     }
 }

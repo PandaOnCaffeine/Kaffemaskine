@@ -12,8 +12,14 @@ namespace Kaffemaskine
         {
             BrewingMachine cm1 = new BrewingMachine();
             CoffeePowder c = new CoffeePowder();
+            Tea t = new Tea();
             cm1.TurnOn();
+
             cm1.EquipFilter();
+            cm1.Brew(5, t);
+
+            Console.WriteLine();
+
             cm1.Brew(10,c);
 
 

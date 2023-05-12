@@ -6,8 +6,8 @@ using System.Threading.Tasks;
 
 namespace Kaffemaskine
 {
-    internal class CoffeePowder : BrewingPowder
+    internal class Tea : BrewingPowder
     {
-        private string CoffeeBrand;
+        private string TeaKind;
     }
 }
