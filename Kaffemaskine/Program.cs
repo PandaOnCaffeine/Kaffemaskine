@@ -10,14 +10,7 @@ namespace Kaffemaskine
     {
         static void Main(string[] args)
         {
-            BrewingMachine cm1 = new BrewingMachine();
-            CoffeePowder c = new CoffeePowder();
-            cm1.TurnOn();
-            cm1.EquipFilter();
-            cm1.Brew(10,c);
 
-
-            Console.ReadLine();
         }
     }
 }

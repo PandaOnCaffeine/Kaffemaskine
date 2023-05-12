@@ -44,8 +44,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="BrewingMachine.cs" />
-    <Compile Include="CoffeePowder.cs" />
     <Compile Include="Machine.cs" />
+    <Compile Include="Produce.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

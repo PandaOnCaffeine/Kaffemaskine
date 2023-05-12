@@ -8,30 +8,30 @@ namespace Kaffemaskine
 {
     internal class BrewingMachine : Machine
     {
-        private bool filter = false;
-        public void EquipFilter()
+        public int water { get; set; }
+        public int cup { get; set; } = 4;
+        public bool filter { get; set; } = false;
+        public int coffee { get; set; } = 0;
+        public string brew { get; set; }
+        public void Brew()
         {
-            filter = true;
+            if (water >= 50 && filter == true)
+            {
+                water += -50;
+                if (coffee >= 10)
+                {
+                    BrewCoffee();
+                }
+            }
+            else
+            {
+                Console.WriteLine("Check Water and Filter");
+            }
         }
-        public void Brew(int cups, CoffeePowder c)
+        public void BrewCoffee()
         {
-            if (on == false)
-            {
-                Console.WriteLine($"{GetType()} Not Turned On!");
-                return;
-            }
-            else if (filter == false)
-            {
-                Console.WriteLine($"{GetType()} Filter Not Found!");
-                return;
-            }
-            int count = 0;
-            for (int i = 0; i < cups; i++)
-            {
-                count++;
-                Console.WriteLine($"Cup number {count} of Coffee is done!");
-            }
-            filter = false;
+            coffee += -10;
+            Console.WriteLine("");
         }
     }
 }
